@@ -1,4 +1,5 @@
 # Boring News MCP Server
+[![smithery badge](https://smithery.ai/badge/@Oliviergg/boring-news-mcp)](https://smithery.ai/server/@Oliviergg/boring-news-mcp)
 
 A Python server library for interacting with the Boring News API from a MCP (Model Context Protocol) server like Claude Desktop
 
@@ -17,6 +18,16 @@ four actions :
   - Cultural news focus
 
 ## Quick Start
+
+### Installing via Smithery
+
+To install boring-news-mcp for Claude Desktop automatically via [Smithery](https://smithery.ai/server/@Oliviergg/boring-news-mcp):
+
+```bash
+npx -y @smithery/cli install @Oliviergg/boring-news-mcp --client claude
+```
+
+### Manual Installation
 ```bash
 pip install boring-news-mcp
 ```
