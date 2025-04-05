@@ -1,37 +1,41 @@
-# Boring News MCP Client
+# Boring News MCP Server
 
-A Python client library for interacting with the Boring News API using Mission Control Protocol (MCP).
+A Python server library for interacting with the Boring News API from a MCP (Model Context Protocol) server like Claude Desktop
 
-## Installation
-
-```bash
-pip install boring-news-mcp
-```
 
 ## Features
-
+four actions : 
 - Fetch articles by date, category, or tags
 - Get articles mentioning specific people
 - Find similar articles based on text content
 - Get article groups and categories
-- Generate various types of news summaries:
+
+- Predefined Prompts
   - Daily news (tech and culture focused)
   - Comprehensive daily summaries
   - News highlights
   - Cultural news focus
 
 ## Quick Start
+```bash
+pip install boring-news-mcp
+```
 
-```python
-from boring_news_mcp import get_articles_by_date, daily_news_summary
-
-# Get today's articles
-articles = await get_articles_by_date()
-print(articles)
-
-# Get a comprehensive news summary for a specific date
-summary = await daily_news_summary("2024-04-05")
-print(summary)
+### Exemple of claude Desktop Configuration
+```json
+{
+  "mcpServers": {
+    ...      
+    "boringnews": {
+          "command": "python",
+          "args": [
+                "-m", 
+                "boring_news_mcp"
+          ]
+      },
+    ...
+    }
+}
 ```
 
 ## API Reference
@@ -44,7 +48,7 @@ print(summary)
 - `get_article_groups(date: Optional[str]) -> str`
 - `get_categories(date: Optional[str]) -> str`
 
-### News Summaries
+### News Summaries Prompt
 
 - `daily_news(target_date: str) -> str`
 - `daily_news_summary(target_date: str) -> str`
