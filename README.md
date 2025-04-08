@@ -1,6 +1,6 @@
 # Boring News MCP Server
-
-A Python server library for interacting with the Boring News API from a MCP (Model Context Protocol) server like Claude Desktop
+A Python server library for interacting with the Boring News API from a MCP (Model Context Protocol) server like Claude Desktop.
+The website : [boring-news.fr](https://boring-news.fr)
 
 
 ## Features
