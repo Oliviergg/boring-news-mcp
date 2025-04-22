@@ -63,7 +63,7 @@ async def get_articles_by_date(date: Optional[str] = None, category: Optional[st
     print(f"Getting articles for date: {date}, category: {category}, tags: {tags}")
     params = {}
     if date:
-        params['date'] = date
+        params['article_date'] = date
     if category:
         params['category'] = category
     if tags:
@@ -98,8 +98,7 @@ async def get_similar_articles(text: str) -> str:
         text: Text to find similar articles for
     """
     print(f"Getting articles similar to: {text}")
-    data = {'text': text}
-    articles = await make_request("POST", "/api/articles/similar", data)
+    articles = await make_request("get", "/api/articles/similar", data={'text': text})
     if not articles:
         return "Unable to fetch similar articles or no articles found."
 

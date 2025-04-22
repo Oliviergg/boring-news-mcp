@@ -4,17 +4,17 @@ build-backend = "hatchling.build"
 
 [project]
 name = "boring-news-mcp"
-version = "0.4.0"
+version = "0.5.1"
 description = "MCP (Model Context Protocol) Server for Boring News API"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.10"
 license = "MIT"
 authors = [
     { name = "Boring News Team" }
 ]
 dependencies = [
     "httpx>=0.25.0",
-    "fastmcp>=0.1.0"
+    "fastmcp>=0.1.0",
 ]
 
 [project.urls]
