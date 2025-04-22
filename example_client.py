@@ -7,12 +7,27 @@ server_params = StdioServerParameters(
     command="/Users/olivier/.local/bin/uv",  # Executable
     args=[
         "--directory",
-        "/Users/olivier/Dev/boring-news/boring-news-mcp",
+        "/Users/olivier/Dev/boring-news/boring-news-mcp/src/",
         "run", 
-        "boring-news-mcp.py"
+        "-m", "boring_news_mcp"
     ],  # Server script
+    # command="/Users/olivier/.local/bin/uv",  # Executable
+    # args=[
+    #         "--directory",
+    #         "/Users/olivier/python",
+    #         "run",
+    #         "-m", "boring_news_mcp"
+    # ],  # Server script
     env=None,  # Optional environment variables
 )
+
+async def get_similar_articles(text: str):
+    async with stdio_client(server_params) as (read, write):
+        async with ClientSession(read, write) as session:
+            await session.initialize()
+            articles = await session.call_tool("get_similar_articles", arguments={"text": text})
+            for article in articles.content:
+                print(article.text)
 
 async def get_articles_by_date(date: str):
     async with stdio_client(server_params) as (read, write):
@@ -80,11 +95,12 @@ async def get_categories():
             print("Available categories:", categories)
 
 async def run():
-    # await get_tools()
+    await get_tools()
     # await get_articles_by_date("2025-04-16")
     #await get_articles_by_tags("aston villa")
-    await get_article_groups("2025-04-16")
-    # await get_categories()
+    #await get_article_groups("2025-04-16")
+    #await get_categories()
+    await get_similar_articles("aston villa")
 
             
 

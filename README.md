@@ -64,3 +64,12 @@ pip install boring-news-mcp
 ## License
 
 MIT License
+
+
+
+# Build
+```
+uv run -m buid
+uv run -m twine upload dist/*
+rm dist/*
+```
