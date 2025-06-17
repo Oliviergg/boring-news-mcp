@@ -1,3 +1,5 @@
+[![MseeP.ai Security Assessment Badge](https://mseep.net/pr/oliviergg-boring-news-mcp-badge.png)](https://mseep.ai/app/oliviergg-boring-news-mcp)
+
 # Boring News MCP Server
 A Python server library for interacting with the Boring News API from a MCP (Model Context Protocol) server like Claude Desktop.
 The website : [boring-news.fr](https://boring-news.fr)
